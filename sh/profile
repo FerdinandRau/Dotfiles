@@ -1,0 +1,22 @@
+alias ga="git add"
+alias gc="git commit"
+alias grep="grep --color=auto"
+alias gs="git status"
+alias ping="ping -c 4"
+
+if [ "$(command -v nvim)" ] >/dev/null; then
+	alias vi=nvim
+	alias vim="nvim --clean"
+	export EDITOR=nvim
+fi
+
+if [ "$(command -v exa)" ] >/dev/null; then
+	alias ls=exa
+	alias ll="exa -la"
+	alias la="exa -a"
+else
+	alias ll="ls -lA"
+	alias la="ls -A"
+fi
+
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
